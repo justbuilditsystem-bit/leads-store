@@ -1,0 +1,65 @@
+<section class="jb-section jb-video jb-section--soft" data-section-id="{{ section.id }}">
+  <div class="jb-container">
+    <header class="jb-section__header">
+      <span class="jb-eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="jb-section__title">{{ section.settings.title }}</h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="jb-section__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if section.settings.video_url != blank -%}
+      <div class="jb-video__wrap" data-jb-video data-video-url="{{ section.settings.video_url }}" data-poster="{{ section.settings.poster | image_url: width: 1200 }}">
+        {%- if section.settings.poster != blank -%}
+          <img class="jb-video__poster" src="{{ section.settings.poster | image_url: width: 1200 }}" alt="" loading="lazy" width="1200" height="675">
+        {%- endif -%}
+        <button class="jb-video__play" type="button" aria-label="Reproducir video">
+          <svg viewBox="0 0 64 64" width="72" height="72" fill="currentColor" aria-hidden="true">
+            <circle cx="32" cy="32" r="32" opacity=".95"/>
+            <path d="M26 22 L46 32 L26 42 Z" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video pre-venta",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "ANTES DE COMPRAR"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Mira este video de 2 minutos."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Te explicamos qué vas a recibir, cómo se entregan los leads y por qué cerramos cuentas que otros no pueden."
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "URL del video",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Imagen poster (mientras carga el video)"
+    }
+  ],
+  "presets": [
+    { "name": "Video pre-venta" }
+  ]
+}
+{% endschema %}

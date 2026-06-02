@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "faq": {
+      "type": "jb-faq"
+    }
+  },
+  "order": ["main", "faq"]
+}

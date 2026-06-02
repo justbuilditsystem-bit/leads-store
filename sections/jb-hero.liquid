@@ -1,0 +1,130 @@
+<section class="jb-section jb-hero" data-section-id="{{ section.id }}">
+  <div class="jb-container jb-hero__inner">
+    <div class="jb-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="jb-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h1 class="jb-hero__title">{{ section.settings.headline }}</h1>
+      <p class="jb-hero__subtitle">{{ section.settings.subtitle }}</p>
+      <div class="jb-hero__cta">
+        {%- if section.settings.cta_primary_text != blank -%}
+          <a href="{{ section.settings.cta_primary_url }}" class="jb-btn jb-btn--primary jb-btn--lg">
+            {{ section.settings.cta_primary_text }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_text != blank -%}
+          <a href="{{ section.settings.cta_secondary_url }}" class="jb-btn jb-btn--ghost jb-btn--lg">
+            {{ section.settings.cta_secondary_text }}
+          </a>
+        {%- endif -%}
+      </div>
+      <ul class="jb-hero__bullets" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'bullet' -%}
+            <li class="jb-hero__bullet" {{ block.shopify_attributes }}>
+              <span class="jb-hero__bullet-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6 11.5L13 4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      <div class="jb-hero__media">
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 1000 }} 1000w"
+          sizes="(min-width: 900px) 540px, 100vw"
+          alt="{{ section.settings.image.alt | default: section.settings.headline | escape }}"
+          width="540"
+          height="auto"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (texto pequeño arriba del título)",
+      "default": "PARA AGENTES DE SEGUROS HISPANOS EN USA"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Leads que ya quieren hablar contigo."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Deja de quemar horas en cold calls. Recibe prospectos hispanos que ya levantaron la mano por seguro de vida, IUL o final expense — listos en tu WhatsApp en menos de 72 horas."
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_text",
+      "label": "Botón primario — texto",
+      "default": "Ver paquetes"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_url",
+      "label": "Botón primario — URL",
+      "default": "/#productos"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_text",
+      "label": "Botón secundario — texto",
+      "default": "Hablar con un asesor"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Botón secundario — URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen del hero"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Bullet point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Entrega en 24-72 horas"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "bullet", "settings": { "text": "Entrega en 24-72 horas vía WhatsApp o Facebook Form" } },
+      { "type": "bullet", "settings": { "text": "Reposición de leads que vienen mal de origen" } },
+      { "type": "bullet", "settings": { "text": "Soporte real antes y después de la compra" } }
+    ]
+  },
+  "presets": [
+    { "name": "Hero" }
+  ]
+}
+{% endschema %}

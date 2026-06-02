@@ -1,0 +1,62 @@
+{%- comment -%}
+  Tarjeta de producto reutilizable.
+  Uso: {% render 'product-card', product: product %}
+{%- endcomment -%}
+
+{%- assign on_sale = false -%}
+{%- if product.compare_at_price > product.price -%}
+  {%- assign on_sale = true -%}
+  {%- assign discount_pct = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+{%- endif -%}
+
+<article class="jb-product-card {% if product.available == false %}jb-product-card--sold-out{% endif %}">
+  <a href="{{ product.url }}" class="jb-product-card__link" aria-label="{{ product.title | escape }}">
+    <div class="jb-product-card__media">
+      {%- if on_sale -%}
+        {%- render 'badge-sale', discount: discount_pct -%}
+      {%- endif -%}
+      {%- if product.available == false -%}
+        <span class="jb-product-card__sold-out-tag">Agotado</span>
+      {%- endif -%}
+
+      {%- if product.featured_image -%}
+        <img
+          src="{{ product.featured_image | image_url: width: 600 }}"
+          srcset="{{ product.featured_image | image_url: width: 400 }} 400w, {{ product.featured_image | image_url: width: 600 }} 600w, {{ product.featured_image | image_url: width: 800 }} 800w"
+          sizes="(min-width: 900px) 380px, 50vw"
+          alt="{{ product.featured_image.alt | default: product.title | escape }}"
+          width="380"
+          height="380"
+          loading="lazy"
+        >
+      {%- else -%}
+        <div class="jb-product-card__placeholder" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="8" y="8" width="48" height="48" rx="4"/>
+            <circle cx="22" cy="22" r="4"/>
+            <path d="M8 48 L24 32 L40 44 L56 28"/>
+          </svg>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="jb-product-card__body">
+      <h3 class="jb-product-card__title">{{ product.title }}</h3>
+
+      <div class="jb-product-card__price">
+        {%- if on_sale -%}
+          <span class="jb-product-card__price-sale">{{ product.price | money }}</span>
+          <span class="jb-product-card__price-compare">{{ product.compare_at_price | money }}</span>
+        {%- else -%}
+          <span class="jb-product-card__price-sale">{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- if product.available -%}
+        <span class="jb-product-card__cta">Comprar ahora &rarr;</span>
+      {%- else -%}
+        <span class="jb-product-card__cta jb-product-card__cta--muted">Agotado</span>
+      {%- endif -%}
+    </div>
+  </a>
+</article>

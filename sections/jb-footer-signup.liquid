@@ -1,0 +1,64 @@
+<section class="jb-section jb-footer-signup" data-section-id="{{ section.id }}">
+  <div class="jb-container jb-footer-signup__inner">
+    <div class="jb-footer-signup__content">
+      <h2 class="jb-footer-signup__title">{{ section.settings.title }}</h2>
+      <p class="jb-footer-signup__subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    {%- form 'customer', class: 'jb-footer-signup__form' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      {%- if form.posted_successfully? -%}
+        <div class="jb-footer-signup__success">
+          Listo. Te avisamos cuando entren paquetes nuevos o promos.
+        </div>
+      {%- else -%}
+        <div class="jb-footer-signup__input-row">
+          <label for="NewsletterEmail" class="visually-hidden">Email</label>
+          <input
+            type="email"
+            id="NewsletterEmail"
+            name="contact[email]"
+            placeholder="Tu email"
+            autocomplete="email"
+            required
+          >
+          <button type="submit" class="jb-btn jb-btn--primary">
+            {{ section.settings.cta_text }}
+          </button>
+        </div>
+        {%- if form.errors -%}
+          <p class="jb-footer-signup__error">{{ form.errors | default_errors }}</p>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Ofertas exclusivas antes que todos."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Suscríbete y avisamos primero cuando abrimos cupos de nichos nuevos o bajamos precios de paquetes grandes."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Botón — texto",
+      "default": "Suscribirme"
+    }
+  ],
+  "presets": [
+    { "name": "Newsletter footer" }
+  ]
+}
+{% endschema %}

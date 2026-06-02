@@ -1,0 +1,49 @@
+<section class="jb-section jb-collection">
+  <div class="jb-container">
+    <header class="jb-section__header jb-section__header--center">
+      <h1 class="jb-section__title">{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <div class="jb-section__subtitle">{{ collection.description }}</div>
+      {%- endif -%}
+    </header>
+
+    {%- if collection.products.size > 0 -%}
+      <div class="jb-products__grid">
+        {%- for product in collection.products -%}
+          {%- render 'product-card', product: product -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="jb-pagination" aria-label="Paginación">
+          {%- if paginate.previous -%}
+            <a href="{{ paginate.previous.url }}">&larr; Anterior</a>
+          {%- endif -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}">{{ part.title }}</a>
+            {%- else -%}
+              <span {% if part.title == paginate.current_page %}aria-current="page"{% endif %}>{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if paginate.next -%}
+            <a href="{{ paginate.next.url }}">Siguiente &rarr;</a>
+          {%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- else -%}
+      <div class="jb-collection__empty">
+        <p>Todavía no hay productos en esta colección.</p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% paginate collection.products by 12 %}{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Colección principal",
+  "settings": []
+}
+{% endschema %}

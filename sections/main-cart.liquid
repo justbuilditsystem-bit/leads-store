@@ -1,0 +1,74 @@
+<section class="jb-section jb-cart">
+  <div class="jb-container">
+    <h1 class="jb-section__title">Tu carrito</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="jb-cart__empty">
+        <p>Todavía no agregaste nada.</p>
+        <a href="{{ routes.root_url }}" class="jb-btn jb-btn--primary">Ver paquetes</a>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="jb-cart__form">
+        <table class="jb-cart__table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for item in cart.items -%}
+              <tr class="jb-cart__row">
+                <td class="jb-cart__product">
+                  {%- if item.image -%}
+                    <img src="{{ item.image | image_url: width: 120 }}" alt="{{ item.title | escape }}" width="60" height="60" loading="lazy">
+                  {%- endif -%}
+                  <div>
+                    <a href="{{ item.url }}">{{ item.product.title }}</a>
+                    {%- unless item.product.has_only_default_variant -%}
+                      <p class="jb-cart__variant">{{ item.variant.title }}</p>
+                    {%- endunless -%}
+                  </div>
+                </td>
+                <td>{{ item.original_price | money }}</td>
+                <td>
+                  <input
+                    type="number"
+                    name="updates[{{ item.key }}]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    inputmode="numeric"
+                    aria-label="Cantidad de {{ item.product.title | escape }}"
+                  >
+                  <a href="{{ item.url_to_remove }}" class="jb-cart__remove">Quitar</a>
+                </td>
+                <td>{{ item.original_line_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+        <div class="jb-cart__summary">
+          <div class="jb-cart__subtotal">
+            <span>Subtotal</span>
+            <strong>{{ cart.total_price | money }}</strong>
+          </div>
+          <p class="jb-cart__note">Impuestos y envío se calculan en el checkout.</p>
+          <div class="jb-cart__actions">
+            <button type="submit" name="update" class="jb-btn jb-btn--ghost">Actualizar</button>
+            <button type="submit" name="checkout" class="jb-btn jb-btn--primary jb-btn--lg">Finalizar compra</button>
+          </div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Carrito principal",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,94 @@
+<footer class="jb-footer">
+  <div class="jb-container jb-footer__inner">
+    <div class="jb-footer__brand">
+      {%- if settings.brand_logo != blank -%}
+        <img
+          src="{{ settings.brand_logo | image_url: width: 200 }}"
+          alt="{{ settings.brand_name | escape }}"
+          width="120"
+          height="auto"
+          loading="lazy"
+          style="max-width: 120px;"
+        >
+      {%- else -%}
+        <div class="jb-footer__brand-name">{{ settings.brand_name }}</div>
+      {%- endif -%}
+      <p class="jb-footer__tagline">{{ settings.brand_tagline }}</p>
+    </div>
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'menu' -%}
+          <div class="jb-footer__col" {{ block.shopify_attributes }}>
+            <h4 class="jb-footer__col-title">{{ block.settings.title }}</h4>
+            <ul class="jb-footer__list">
+              {%- for link in block.settings.menu.links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- when 'contact' -%}
+          <div class="jb-footer__col" {{ block.shopify_attributes }}>
+            <h4 class="jb-footer__col-title">{{ block.settings.title }}</h4>
+            <ul class="jb-footer__list">
+              {%- if settings.contact_email != blank -%}
+                <li><a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></li>
+              {%- endif -%}
+              {%- if settings.whatsapp_url != blank -%}
+                <li><a href="{{ settings.whatsapp_url }}" target="_blank" rel="noopener">WhatsApp</a></li>
+              {%- endif -%}
+              {%- if settings.social_instagram != blank -%}
+                <li><a href="{{ settings.social_instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+              {%- endif -%}
+              {%- if settings.social_facebook != blank -%}
+                <li><a href="{{ settings.social_facebook }}" target="_blank" rel="noopener">Facebook</a></li>
+              {%- endif -%}
+            </ul>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="jb-footer__bottom">
+    <div class="jb-container jb-footer__bottom-inner">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ settings.brand_name }}. Todos los derechos reservados.</span>
+      <span class="jb-footer__legal">
+        <a href="{{ routes.root_url }}policies/privacy-policy">Privacidad</a>
+        &middot;
+        <a href="{{ routes.root_url }}policies/terms-of-service">Términos</a>
+        &middot;
+        <a href="{{ routes.root_url }}policies/refund-policy">Reembolsos</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menú",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Título", "default": "Tienda" },
+        { "type": "link_list", "id": "menu", "label": "Menú", "default": "footer" }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "Contacto",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Título", "default": "Contacto" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "menu" },
+      { "type": "contact" }
+    ]
+  }
+}
+{% endschema %}

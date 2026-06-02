@@ -1,0 +1,28 @@
+{
+  "current": {
+    "brand_name": "Tienda de Leads",
+    "brand_tagline": "Conecta Con Prospectos Listos Para Actuar",
+    "logo_max_width": 140,
+    "color_bg": "#FFFFFF",
+    "color_bg_soft": "#FAFAFA",
+    "color_text": "#1A1A1A",
+    "color_text_muted": "#666666",
+    "color_accent": "#00A86B",
+    "color_accent_hover": "#008556",
+    "color_badge_sale": "#F27830",
+    "color_border": "#E5E5E5",
+    "font_family": "system",
+    "base_font_size": 16,
+    "page_width": 1200,
+    "whatsapp_url": "https://wa.link/t4ie68",
+    "contact_email": "hola@justbuilditnow.com"
+  },
+  "presets": {
+    "Default": {
+      "brand_name": "Tienda de Leads",
+      "brand_tagline": "Conecta Con Prospectos Listos Para Actuar",
+      "color_accent": "#00A86B",
+      "font_family": "system"
+    }
+  }
+}

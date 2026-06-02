@@ -1,0 +1,73 @@
+<section class="jb-section jb-products jb-section--soft" data-section-id="{{ section.id }}" id="productos">
+  <div class="jb-container">
+    <header class="jb-section__header">
+      <span class="jb-eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="jb-section__title">{{ section.settings.title }}</h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="jb-section__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- assign collection_handle = section.settings.collection -%}
+    {%- assign target_collection = collections[collection_handle] -%}
+    {%- assign products_to_show = target_collection.products | default: collections.frontpage.products -%}
+
+    {%- if products_to_show.size > 0 -%}
+      <div class="jb-products__grid">
+        {%- for product in products_to_show limit: section.settings.products_to_show -%}
+          {%- render 'product-card', product: product -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="jb-products__empty">
+        <p>Pronto vas a ver acá los paquetes de leads. Estamos cargando el catálogo.</p>
+        <a href="{{ settings.whatsapp_url }}" class="jb-btn jb-btn--primary" target="_blank" rel="noopener">
+          Hablar por WhatsApp mientras tanto
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grid de productos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "PAQUETES"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Compra leads"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Elige la cantidad que necesitas. Todos los paquetes vienen con entrega vía WhatsApp o Facebook Form y reposición de leads que vienen mal de origen."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colección de productos a mostrar"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "label": "Productos a mostrar",
+      "default": 6
+    }
+  ],
+  "presets": [
+    { "name": "Grid de productos" }
+  ]
+}
+{% endschema %}

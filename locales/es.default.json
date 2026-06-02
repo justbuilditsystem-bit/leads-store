@@ -1,0 +1,47 @@
+{
+  "general": {
+    "404": {
+      "title": "Página no encontrada",
+      "subtext": "El enlace que seguiste puede estar roto, o la página puede haber sido removida.",
+      "link": "Volver al inicio"
+    },
+    "search": {
+      "placeholder": "Buscar"
+    },
+    "newsletter_form": {
+      "email_placeholder": "Tu email",
+      "submit": "Suscribirme",
+      "success": "Gracias. Te avisamos cuando entren nuevos paquetes."
+    },
+    "cart": {
+      "title": "Tu carrito",
+      "empty": "Tu carrito está vacío.",
+      "subtotal": "Subtotal",
+      "checkout": "Finalizar compra",
+      "continue_shopping": "Seguir comprando",
+      "remove": "Quitar",
+      "quantity": "Cantidad"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Agregar al carrito",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
+      "sale_price": "Precio de oferta",
+      "regular_price": "Precio normal",
+      "from_price": "Desde",
+      "select_variant": "Elige la cantidad"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono / WhatsApp",
+      "message": "¿Qué necesitas?",
+      "submit": "Enviar",
+      "success": "Mensaje recibido. Te contactamos en menos de 24 horas hábiles."
+    }
+  }
+}

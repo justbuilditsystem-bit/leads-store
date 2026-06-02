@@ -1,0 +1,123 @@
+<section class="jb-section jb-verified" data-section-id="{{ section.id }}">
+  <div class="jb-container jb-verified__inner">
+    <div class="jb-verified__content">
+      <span class="jb-eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="jb-section__title">{{ section.settings.title }}</h2>
+      <p class="jb-section__subtitle">{{ section.settings.subtitle }}</p>
+
+      <ul class="jb-verified__bullets" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'bullet' -%}
+            <li class="jb-verified__bullet" {{ block.shopify_attributes }}>
+              <span class="jb-verified__check" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6 11.5L13 4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+      <div class="jb-verified__cta">
+        {%- if section.settings.cta_text != blank -%}
+          <a href="{{ section.settings.cta_url }}" class="jb-btn jb-btn--primary jb-btn--lg">
+            {{ section.settings.cta_text }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.price_label != blank -%}
+          <span class="jb-verified__price">{{ section.settings.price_label }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      <div class="jb-verified__media">
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          srcset="{{ section.settings.image | image_url: width: 500 }} 500w, {{ section.settings.image | image_url: width: 800 }} 800w"
+          sizes="(min-width: 900px) 460px, 100vw"
+          alt="{{ section.settings.image.alt | default: section.settings.title | escape }}"
+          width="460"
+          height="auto"
+          loading="lazy"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Página verificada (upsell)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "UPSELL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Página verificada con tu licencia y foto."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Un perfil profesional con tu nombre, foto y número de licencia para que cada prospecto que reciba el lead vea que estás del otro lado y no es un call center anónimo. Sube la tasa de respuesta y baja las objeciones de confianza."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen de la página verificada (mockup)"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Botón — texto",
+      "default": "Quiero mi página verificada"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Botón — URL"
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Texto debajo del botón (precio o aclaración)",
+      "default": "Suscripción mensual · cancelas cuando quieras"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Bullet",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Perfil con tu foto profesional y número de licencia visible"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "default": {
+    "blocks": [
+      { "type": "bullet", "settings": { "text": "Perfil con tu foto profesional y número de licencia visible" } },
+      { "type": "bullet", "settings": { "text": "Link directo a WhatsApp para que el lead te escriba en un click" } },
+      { "type": "bullet", "settings": { "text": "Reseñas y casos de éxito que el prospecto puede ver antes de hablarte" } },
+      { "type": "bullet", "settings": { "text": "Mejora tasa de respuesta promedio del 25% al 40-50%" } }
+    ]
+  },
+  "presets": [
+    { "name": "Página verificada" }
+  ]
+}
+{% endschema %}

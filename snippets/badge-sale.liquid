@@ -1,0 +1,13 @@
+{%- comment -%}
+  Badge de oferta.
+  Uso: {% render 'badge-sale', discount: 17 %}  → muestra "-17%"
+       {% render 'badge-sale' %}                → muestra "Oferta"
+{%- endcomment -%}
+
+<span class="jb-badge-sale" aria-hidden="true">
+  {%- if discount -%}
+    -{{ discount }}%
+  {%- else -%}
+    Oferta
+  {%- endif -%}
+</span>
