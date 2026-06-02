@@ -790,10 +790,10 @@ p { margin: 0 0 1em; }
 .jb-contact__success p { margin: 0; color: var(--jb-text-muted); font-size: .9375rem; }
 .jb-contact__error {
   padding: 16px;
-  background: #fff4f0;
-  border: 1px solid #f5cdb8;
+  background: color-mix(in srgb, #c44 12%, transparent);
+  border: 1px solid color-mix(in srgb, #c44 30%, transparent);
   border-radius: 10px;
-  color: #a8431b;
+  color: #e8a878;
   font-size: .9375rem;
 }
 
@@ -843,21 +843,23 @@ p { margin: 0 0 1em; }
    ============================================================ */
 
 .jb-footer-signup {
-  background: linear-gradient(135deg, var(--jb-text) 0%, #2a2a2a 100%);
-  color: #fff;
+  background:
+    linear-gradient(135deg, #1a1610 0%, #0d0a06 100%);
+  color: var(--jb-text);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid color-mix(in srgb, var(--jb-accent) 18%, transparent);
 }
 .jb-footer-signup::before {
   content: '';
   position: absolute;
   top: -100px;
   right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--jb-accent) 22%, transparent) 0%, transparent 70%);
-  filter: blur(40px);
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--jb-accent) 30%, transparent) 0%, transparent 70%);
+  filter: blur(50px);
   pointer-events: none;
 }
 .jb-footer-signup__inner {
@@ -871,38 +873,38 @@ p { margin: 0 0 1em; }
 .jb-footer-signup__title {
   font-size: clamp(1.625rem, 3vw, 2.125rem);
   margin: 0 0 10px;
-  color: #fff;
+  color: var(--jb-text);
   letter-spacing: -.025em;
 }
-.jb-footer-signup__subtitle { color: rgba(255,255,255,.7); margin: 0; font-size: 1.0625rem; line-height: 1.55; }
+.jb-footer-signup__subtitle { color: var(--jb-text-muted); margin: 0; font-size: 1.0625rem; line-height: 1.55; }
 .jb-footer-signup__input-row {
   display: flex;
   gap: 8px;
-  background: rgba(255,255,255,.1);
+  background: color-mix(in srgb, var(--jb-accent) 8%, transparent);
   border-radius: 12px;
   padding: 6px;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid color-mix(in srgb, var(--jb-accent) 22%, transparent);
   backdrop-filter: blur(10px);
 }
 .jb-footer-signup__input-row input {
   flex: 1;
   background: transparent;
   border: 0;
-  color: #fff;
+  color: var(--jb-text);
   padding: 13px 16px;
   font-size: 1rem;
   font-family: inherit;
 }
-.jb-footer-signup__input-row input::placeholder { color: rgba(255,255,255,.5); }
+.jb-footer-signup__input-row input::placeholder { color: color-mix(in srgb, var(--jb-text-muted) 80%, transparent); }
 .jb-footer-signup__input-row input:focus { outline: 0; }
 .jb-footer-signup__success {
   padding: 18px;
-  background: rgba(255,255,255,.1);
+  background: color-mix(in srgb, var(--jb-accent) 12%, transparent);
   border-radius: 12px;
   font-weight: 500;
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid color-mix(in srgb, var(--jb-accent) 28%, transparent);
 }
-.jb-footer-signup__error { color: #ff9b7b; font-size: .9rem; margin-top: 8px; }
+.jb-footer-signup__error { color: #e8a878; font-size: .9rem; margin-top: 8px; }
 
 @media (max-width: 768px) {
   .jb-footer-signup { padding: 56px 0; }

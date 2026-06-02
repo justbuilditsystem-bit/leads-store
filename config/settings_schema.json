@@ -46,49 +46,49 @@
         "type": "color",
         "id": "color_bg",
         "label": "Fondo principal",
-        "default": "#FFFFFF"
+        "default": "#0d0d0d"
       },
       {
         "type": "color",
         "id": "color_bg_soft",
         "label": "Fondo suave (secciones alternas)",
-        "default": "#FAFAFA"
+        "default": "#171717"
       },
       {
         "type": "color",
         "id": "color_text",
         "label": "Texto principal",
-        "default": "#1A1A1A"
+        "default": "#f0e8d8"
       },
       {
         "type": "color",
         "id": "color_text_muted",
         "label": "Texto secundario",
-        "default": "#666666"
+        "default": "#a8a08c"
       },
       {
         "type": "color",
         "id": "color_accent",
-        "label": "Acento (botones, links)",
-        "default": "#00A86B"
+        "label": "Acento (botones, links — dorado)",
+        "default": "#c8a663"
       },
       {
         "type": "color",
         "id": "color_accent_hover",
-        "label": "Acento hover",
-        "default": "#008556"
+        "label": "Acento hover (dorado claro)",
+        "default": "#d4b56e"
       },
       {
         "type": "color",
         "id": "color_badge_sale",
-        "label": "Badge de oferta",
-        "default": "#F27830"
+        "label": "Badge de oferta (dorado brillante)",
+        "default": "#d4af37"
       },
       {
         "type": "color",
         "id": "color_border",
         "label": "Bordes",
-        "default": "#E5E5E5"
+        "default": "#2a2a2a"
       }
     ]
   },
