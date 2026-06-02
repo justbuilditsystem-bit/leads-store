@@ -1,9 +1,9 @@
 <section class="jb-section jb-footer-signup" data-section-id="{{ section.id }}">
   <div class="jb-container jb-footer-signup__inner">
-    <div class="jb-footer-signup__content">
+    <header class="jb-section__header jb-section__header--center">
       <h2 class="jb-footer-signup__title">{{ section.settings.title }}</h2>
       <p class="jb-footer-signup__subtitle">{{ section.settings.subtitle }}</p>
-    </div>
+    </header>
 
     {%- form 'customer', class: 'jb-footer-signup__form' -%}
       <input type="hidden" name="contact[tags]" value="newsletter">
