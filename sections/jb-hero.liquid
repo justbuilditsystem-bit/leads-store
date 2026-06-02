@@ -1,5 +1,30 @@
 <section class="jb-section jb-hero" data-section-id="{{ section.id }}">
   <div class="jb-container jb-hero__inner">
+    <div class="jb-hero__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 1600 }}"
+          srcset="{{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w, {{ section.settings.image | image_url: width: 1600 }} 1600w, {{ section.settings.image | image_url: width: 2000 }} 2000w"
+          sizes="(min-width: 1200px) 1200px, 100vw"
+          alt="{{ section.settings.image.alt | default: section.settings.headline | escape }}"
+          width="1200"
+          height="500"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- else -%}
+        <div class="jb-hero__placeholder" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="8" y="14" width="48" height="36" rx="3"/>
+            <circle cx="22" cy="26" r="3.5"/>
+            <path d="M8 44 L24 30 L40 42 L56 28"/>
+          </svg>
+          <span>Subí aquí la imagen del banner del hero</span>
+          <span class="jb-hero__placeholder-hint">Recomendado: 1600×667px · JPG o PNG</span>
+        </div>
+      {%- endif -%}
+    </div>
+
     <div class="jb-hero__content">
       {%- if section.settings.eyebrow != blank -%}
         <span class="jb-eyebrow">{{ section.settings.eyebrow }}</span>
@@ -33,21 +58,6 @@
         {%- endfor -%}
       </ul>
     </div>
-
-    {%- if section.settings.image != blank -%}
-      <div class="jb-hero__media">
-        <img
-          src="{{ section.settings.image | image_url: width: 800 }}"
-          srcset="{{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 1000 }} 1000w"
-          sizes="(min-width: 900px) 540px, 100vw"
-          alt="{{ section.settings.image.alt | default: section.settings.headline | escape }}"
-          width="540"
-          height="auto"
-          loading="eager"
-          fetchpriority="high"
-        >
-      </div>
-    {%- endif -%}
   </div>
 </section>
 
@@ -98,7 +108,7 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Imagen del hero"
+      "label": "Imagen banner del hero (1600×667px recomendado)"
     }
   ],
   "blocks": [
