@@ -139,8 +139,7 @@
       {
         "type": "url",
         "id": "whatsapp_url",
-        "label": "URL de WhatsApp (CTA flotante y footer)",
-        "default": "https://wa.link/t4ie68"
+        "label": "URL de WhatsApp (CTA flotante y footer)"
       },
       {
         "type": "text",
