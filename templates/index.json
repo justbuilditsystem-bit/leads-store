@@ -159,7 +159,7 @@
         "subtitle": "Un perfil profesional con tu nombre, foto y número de licencia para que cada prospecto que reciba el lead vea que estás del otro lado y no es un call center anónimo. Sube la tasa de respuesta y baja las objeciones de confianza.",
         "image": "shopify://shop_images/4.png",
         "cta_text": "Quiero mi página verificada",
-        "cta_url": "",
+        "cta_url": "shopify://collections/pagina-verificada",
         "price_label": "Suscripción mensual · cancelas cuando quieras"
       }
     },
