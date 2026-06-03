@@ -1,22 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "jb-hero",
-      "name": "Hero",
       "blocks": {
-        "b1": { "type": "bullet", "settings": { "text": "Entrega en 24-72 horas vía WhatsApp o Facebook Form" } },
-        "b2": { "type": "bullet", "settings": { "text": "Reposición de leads que vienen mal de origen" } },
-        "b3": { "type": "bullet", "settings": { "text": "Soporte real antes y después de la compra" } }
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Entrega en 24-72 horas vía WhatsApp o Facebook Form"
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Reposición de leads que vienen mal de origen"
+          }
+        },
+        "b3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Soporte real antes y después de la compra"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3"]
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "name": "Hero",
+      "settings": {
+        "eyebrow": "PARA AGENTES DE SEGUROS HISPANOS EN USA",
+        "headline": "Leads que ya quieren hablar contigo.",
+        "subtitle": "Deja de quemar horas en cold calls. Recibe prospectos hispanos que ya levantaron la mano por seguro de vida, IUL o final expense — listos en tu WhatsApp en menos de 72 horas.",
+        "cta_primary_text": "Ver paquetes",
+        "cta_primary_url": "",
+        "cta_secondary_text": "Hablar con un asesor",
+        "cta_secondary_url": ""
+      }
     },
     "video": {
       "type": "jb-video",
-      "name": "Video pre-venta"
+      "name": "Video pre-venta",
+      "settings": {
+        "eyebrow": "ANTES DE COMPRAR",
+        "title": "Mira este video de 2 minutos.",
+        "subtitle": "Te explicamos qué vas a recibir, cómo se entregan los leads y por qué cerramos cuentas que otros no pueden.",
+        "video_url": ""
+      }
     },
     "reassurance": {
       "type": "jb-reassurance",
-      "name": "Reassurance",
       "blocks": {
         "c1": {
           "type": "card",
@@ -51,48 +93,195 @@
           }
         }
       },
-      "block_order": ["c1", "c2", "c3", "c4"]
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "name": "Reassurance",
+      "settings": {
+        "eyebrow": "ASÍ TRABAJAMOS",
+        "title": "No estás solo en este proceso.",
+        "subtitle": "Si nunca compraste leads o ya te quemaste con otro proveedor, te acompañamos antes y después de la compra para que el dinero rinda."
+      }
     },
     "products": {
       "type": "jb-product-grid",
-      "name": "Grid de productos"
+      "name": "Grid de productos",
+      "settings": {
+        "eyebrow": "PAQUETES",
+        "title": "Compra leads",
+        "subtitle": "Elige la cantidad que necesitas. Todos los paquetes vienen con entrega vía WhatsApp o Facebook Form y reposición de leads que vienen mal de origen.",
+        "collection": "paquetes",
+        "products_to_show": 6
+      }
     },
     "verified": {
       "type": "jb-verified",
-      "name": "Página verificada",
       "blocks": {
-        "v1": { "type": "bullet", "settings": { "text": "Perfil con tu foto profesional y número de licencia visible" } },
-        "v2": { "type": "bullet", "settings": { "text": "Link directo a WhatsApp para que el lead te escriba en un click" } },
-        "v3": { "type": "bullet", "settings": { "text": "Reseñas y casos de éxito que el prospecto puede ver antes de hablarte" } },
-        "v4": { "type": "bullet", "settings": { "text": "Mejora tasa de respuesta promedio del 25% al 40-50%" } }
+        "v1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Perfil con tu foto profesional y número de licencia visible"
+          }
+        },
+        "v2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Link directo a WhatsApp para que el lead te escriba en un click"
+          }
+        },
+        "v3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Reseñas y casos de éxito que el prospecto puede ver antes de hablarte"
+          }
+        },
+        "v4": {
+          "type": "bullet",
+          "settings": {
+            "text": "Mejora tasa de respuesta promedio del 25% al 40-50%"
+          }
+        }
       },
-      "block_order": ["v1", "v2", "v3", "v4"]
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "name": "Página verificada",
+      "settings": {
+        "eyebrow": "UPSELL",
+        "title": "Página verificada con tu licencia y foto.",
+        "subtitle": "Un perfil profesional con tu nombre, foto y número de licencia para que cada prospecto que reciba el lead vea que estás del otro lado y no es un call center anónimo. Sube la tasa de respuesta y baja las objeciones de confianza.",
+        "image": "shopify://shop_images/4.png",
+        "cta_text": "Quiero mi página verificada",
+        "cta_url": "",
+        "price_label": "Suscripción mensual · cancelas cuando quieras"
+      }
     },
     "faq": {
       "type": "jb-faq",
-      "name": "FAQ",
       "blocks": {
-        "q1": { "type": "question", "settings": { "question": "¿Qué tipo de leads vendes?", "answer": "<p>Leads de personas hispanas en USA que ya levantaron la mano por seguro de vida, IUL, final expense o protección familiar. Vienen de campañas en Facebook e Instagram y se entregan por dos canales: WhatsApp (el más directo) y Facebook Form (entran a tu CRM).</p>" } },
-        "q2": { "type": "question", "settings": { "question": "¿De dónde vienen los leads?", "answer": "<p>Corremos nuestras propias campañas de Meta Ads en Facebook e Instagram. Targeting demográfico y por intereses optimizado para hispanos 28-65 años en USA. No reciclamos leads viejos ni compramos listas — todos son de los últimos 30 días.</p>" } },
-        "q3": { "type": "question", "settings": { "question": "¿En cuánto tiempo empiezo a recibir los leads?", "answer": "<p>Entre 24 y 72 horas hábiles desde que confirmamos el pago. Te activamos el canal (WhatsApp o Facebook Form a tu CRM), te avisamos por mensaje cuando arranca y desde ahí empiezas a recibirlos en tiempo real.</p>" } },
-        "q4": { "type": "question", "settings": { "question": "¿Qué pasa si un lead no contesta o el número es falso?", "answer": "<p>Revisamos cada caso. Si el lead vino mal de origen (número inexistente, persona equivocada, claramente bot) lo reponemos sin discusión. Si el lead es real pero no te contesta, te damos guía de cómo seguir trabajándolo — los leads frescos suelen necesitar 3-5 toques antes de la primera conversación real.</p>" } },
-        "q5": { "type": "question", "settings": { "question": "¿Puedo pedir un nicho específico (IUL, Final Expense, Mortgage Protection)?", "answer": "<p>Sí. Tenemos campañas vivas para los nichos principales: IUL, Final Expense, Term Life con Living Benefits, Mortgage Protection. Cuando compras el paquete nos confirmas por WhatsApp qué nicho quieres y configuramos la entrega para ese segmento.</p>" } },
-        "q6": { "type": "question", "settings": { "question": "¿Se integran con mi CRM (GoHighLevel, Pipedrive, HubSpot)?", "answer": "<p>Sí, sin costo extra. Si usas GoHighLevel, Pipedrive, HubSpot o cualquier CRM con webhook, te conectamos para que los leads entren automáticos. Si no tienes CRM, te los mandamos a un Google Sheets en tiempo real o directo a WhatsApp.</p>" } },
-        "q7": { "type": "question", "settings": { "question": "¿Los leads son exclusivos o compartidos?", "answer": "<p>Exclusivos. Cada lead que recibes lo recibes tú y nadie más. No revendemos el mismo lead a otros agentes. Por eso los precios son más altos que los packs masivos de $5-$10 por lead que ves por ahí — esos se revenden 4 o 5 veces.</p>" } },
-        "q8": { "type": "question", "settings": { "question": "¿Puedo pausar las entregas si me satura el volumen?", "answer": "<p>Sí. Cuando compras un paquete de 50 leads, puedes pausarlo cuando quieras y retomar después. Avisas por WhatsApp y suspendemos hasta que estés listo. El paquete no caduca.</p>" } },
-        "q9": { "type": "question", "settings": { "question": "¿Cómo pago?", "answer": "<p>Checkout estándar de Shopify: tarjeta de crédito o débito (Visa, Mastercard, Amex, Discover), Apple Pay, Google Pay, Shop Pay. Si necesitas otro método (transferencia, Zelle), avísanos por WhatsApp antes de comprar y te pasamos las instrucciones.</p>" } },
-        "q10": { "type": "question", "settings": { "question": "Soy nuevo en seguros y nunca trabajé leads. ¿Me sirve?", "answer": "<p>Te conviene empezar con el paquete de 10 leads. Antes de que arranquemos te pasamos guía rápida de cómo abrir conversación, qué preguntar en los primeros 3 mensajes y cómo escalar la cita. Sin esto, hasta los mejores leads se desperdician.</p>" } }
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué tipo de leads vendes?",
+            "answer": "<p>Leads de personas hispanas en USA que ya levantaron la mano por seguro de vida, IUL, final expense o protección familiar. Vienen de campañas en Facebook e Instagram y se entregan por dos canales: WhatsApp (el más directo) y Facebook Form (entran a tu CRM).</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "¿De dónde vienen los leads?",
+            "answer": "<p>Corremos nuestras propias campañas de Meta Ads en Facebook e Instagram. Targeting demográfico y por intereses optimizado para hispanos 28-65 años en USA. No reciclamos leads viejos ni compramos listas — todos son de los últimos 30 días.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "¿En cuánto tiempo empiezo a recibir los leads?",
+            "answer": "<p>Entre 24 y 72 horas hábiles desde que confirmamos el pago. Te activamos el canal (WhatsApp o Facebook Form a tu CRM), te avisamos por mensaje cuando arranca y desde ahí empiezas a recibirlos en tiempo real.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué pasa si un lead no contesta o el número es falso?",
+            "answer": "<p>Revisamos cada caso. Si el lead vino mal de origen (número inexistente, persona equivocada, claramente bot) lo reponemos sin discusión. Si el lead es real pero no te contesta, te damos guía de cómo seguir trabajándolo — los leads frescos suelen necesitar 3-5 toques antes de la primera conversación real.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "¿Puedo pedir un nicho específico (IUL, Final Expense, Mortgage Protection)?",
+            "answer": "<p>Sí. Tenemos campañas vivas para los nichos principales: IUL, Final Expense, Term Life con Living Benefits, Mortgage Protection. Cuando compras el paquete nos confirmas por WhatsApp qué nicho quieres y configuramos la entrega para ese segmento.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "¿Se integran con mi CRM (GoHighLevel, Pipedrive, HubSpot)?",
+            "answer": "<p>Sí, sin costo extra. Si usas GoHighLevel, Pipedrive, HubSpot o cualquier CRM con webhook, te conectamos para que los leads entren automáticos. Si no tienes CRM, te los mandamos a un Google Sheets en tiempo real o directo a WhatsApp.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "¿Los leads son exclusivos o compartidos?",
+            "answer": "<p>Exclusivos. Cada lead que recibes lo recibes tú y nadie más. No revendemos el mismo lead a otros agentes. Por eso los precios son más altos que los packs masivos de $5-$10 por lead que ves por ahí — esos se revenden 4 o 5 veces.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "¿Puedo pausar las entregas si me satura el volumen?",
+            "answer": "<p>Sí. Cuando compras un paquete de 50 leads, puedes pausarlo cuando quieras y retomar después. Avisas por WhatsApp y suspendemos hasta que estés listo. El paquete no caduca.</p>"
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cómo pago?",
+            "answer": "<p>Checkout estándar de Shopify: tarjeta de crédito o débito (Visa, Mastercard, Amex, Discover), Apple Pay, Google Pay, Shop Pay. Si necesitas otro método (transferencia, Zelle), avísanos por WhatsApp antes de comprar y te pasamos las instrucciones.</p>"
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "question": "Soy nuevo en seguros y nunca trabajé leads. ¿Me sirve?",
+            "answer": "<p>Te conviene empezar con el paquete de 10 leads. Antes de que arranquemos te pasamos guía rápida de cómo abrir conversación, qué preguntar en los primeros 3 mensajes y cómo escalar la cita. Sin esto, hasta los mejores leads se desperdician.</p>"
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "eyebrow": "PREGUNTAS FRECUENTES",
+        "title": "Lo que más nos preguntan.",
+        "subtitle": "Si tu duda no está acá, mandanos un WhatsApp y te respondemos en menos de una hora hábil."
+      }
     },
     "contact": {
       "type": "jb-contact",
-      "name": "Contacto"
+      "name": "Contacto",
+      "settings": {
+        "eyebrow": "HABLEMOS",
+        "title": "Antes de comprar, habla con un asesor.",
+        "subtitle": "Si es tu primera vez comprando leads o no sabes qué paquete elegir, te orientamos. Sin pitch de venta."
+      }
     },
     "footer-signup": {
       "type": "jb-footer-signup",
-      "name": "Newsletter footer"
+      "name": "Newsletter footer",
+      "settings": {
+        "title": "Ofertas exclusivas antes que todos.",
+        "subtitle": "Suscríbete y avisamos primero cuando abrimos cupos de nichos nuevos o bajamos precios de paquetes grandes.",
+        "cta_text": "Suscribirme"
+      }
     }
   },
-  "order": ["hero", "video", "reassurance", "products", "verified", "faq", "contact", "footer-signup"]
+  "order": [
+    "hero",
+    "video",
+    "reassurance",
+    "products",
+    "verified",
+    "faq",
+    "contact",
+    "footer-signup"
+  ]
 }

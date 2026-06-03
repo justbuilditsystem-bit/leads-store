@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "brand_name": "Tienda de Leads",
@@ -15,7 +24,8 @@
     "base_font_size": 16,
     "page_width": 1200,
     "whatsapp_url": "https://wa.link/t4ie68",
-    "contact_email": "hola@justbuilditnow.com"
+    "contact_email": "info@justbuilditnow.com",
+    "content_for_index": []
   },
   "presets": {
     "Default": {
