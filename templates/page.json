@@ -1,9 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "jb_contact_AxrgeA": {
+      "type": "jb-contact",
+      "name": "Contacto",
+      "settings": {
+        "eyebrow": "HABLEMOS",
+        "title": "Antes de comprar, habla con un asesor.",
+        "subtitle": "Si es tu primera vez comprando leads o no sabes qué paquete elegir, te orientamos. Sin pitch de venta."
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "jb_contact_AxrgeA"
+  ]
 }
