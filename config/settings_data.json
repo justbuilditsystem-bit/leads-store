@@ -11,7 +11,8 @@
   "current": {
     "brand_name": "Tienda de Leads",
     "brand_tagline": "Conecta Con Prospectos Listos Para Actuar",
-    "logo_max_width": 140,
+    "brand_logo": "shopify://shop_images/Lead_Generation_Hero_Digital_Marketing_Growth_Icono_para_tienda_de_Etsy.png",
+    "logo_max_width": 80,
     "color_bg": "#0d0d0d",
     "color_bg_soft": "#171717",
     "color_text": "#f0e8d8",
