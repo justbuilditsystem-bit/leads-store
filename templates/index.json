@@ -42,9 +42,10 @@
         "headline": "Leads que ya quieren hablar contigo.",
         "subtitle": "Deja de quemar horas en cold calls. Recibe prospectos hispanos que ya levantaron la mano por seguro de vida, IUL o final expense — listos en tu WhatsApp en menos de 72 horas.",
         "cta_primary_text": "Ver paquetes",
-        "cta_primary_url": "",
+        "cta_primary_url": "shopify://collections/paquetes",
         "cta_secondary_text": "Hablar con un asesor",
-        "cta_secondary_url": ""
+        "cta_secondary_url": "",
+        "image": "shopify://shop_images/1_IUL_jpg.jpg"
       }
     },
     "video": {
