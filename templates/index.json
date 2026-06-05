@@ -15,6 +15,7 @@
         "slide_zmaCry": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/web_1_optimizada.jpg",
             "link": "",
             "alt_text": ""
           }
