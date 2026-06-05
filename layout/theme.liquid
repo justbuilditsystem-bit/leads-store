@@ -72,7 +72,7 @@
 
   {% sections 'footer-group' %}
 
-  {%- if settings.whatsapp_url != blank -%}
+  {%- if settings.whatsapp_url != blank and settings.hide_whatsapp_fab != true -%}
     <a href="{{ settings.whatsapp_url }}" target="_blank" rel="noopener" class="jb-whatsapp-fab" aria-label="Contactar por WhatsApp">
       <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
         <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.94 9.94 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm0 1.99c2.12 0 4.12.83 5.62 2.33s2.33 3.5 2.33 5.62c0 4.4-3.58 7.98-7.98 7.98-1.42 0-2.81-.38-4.02-1.1l-.29-.17-2.99.78.8-2.92-.19-.3a7.93 7.93 0 0 1-1.22-4.27c0-4.4 3.58-7.95 7.94-7.95zm-2.62 4.27c-.2-.45-.4-.46-.59-.47h-.51c-.17 0-.46.06-.7.31-.24.26-.93.91-.93 2.21 0 1.31.95 2.57 1.08 2.75.14.18 1.85 2.96 4.56 4.04 2.26.9 2.72.72 3.21.67.49-.04 1.58-.65 1.8-1.27.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31-.27-.13-1.58-.78-1.83-.87-.24-.09-.42-.13-.6.14-.18.27-.69.86-.84 1.04-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.42.11-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.97z"/>
@@ -81,5 +81,12 @@
   {%- endif -%}
 
   <script src="{{ 'jb-theme.js' | asset_url }}" defer></script>
+
+  {%- if settings.chat_widget_script != blank -%}
+    {{ settings.chat_widget_script }}
+  {%- endif -%}
+  {%- if settings.analytics_script != blank -%}
+    {{ settings.analytics_script }}
+  {%- endif -%}
 </body>
 </html>

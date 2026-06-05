@@ -464,6 +464,110 @@ p { margin: 0 0 1em; }
 }
 
 /* ============================================================
+   Carousel (hero slider)
+   ============================================================ */
+
+.jb-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--jb-accent) 14%, transparent);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.3),
+    0 24px 60px -16px rgba(0,0,0,.55);
+  background: #000;
+}
+.jb-carousel__track {
+  display: flex;
+  width: 100%;
+  transition: transform .65s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
+}
+.jb-carousel__slide {
+  flex: 0 0 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  outline: 0;
+}
+.jb-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .8s cubic-bezier(.4, 0, .2, 1);
+}
+.jb-carousel__slide:hover img { transform: scale(1.02); }
+.jb-carousel__slide:focus-visible { box-shadow: inset 0 0 0 3px var(--jb-accent); }
+
+.jb-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--jb-bg) 70%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--jb-accent) 30%, transparent);
+  color: var(--jb-accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .18s cubic-bezier(.4, 0, .2, 1);
+  z-index: 2;
+  padding: 0;
+}
+.jb-carousel__nav svg { width: 20px; height: 20px; }
+.jb-carousel__nav:hover {
+  background: var(--jb-accent);
+  color: #0d0d0d;
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--jb-accent) 35%, transparent);
+}
+.jb-carousel__nav--prev { left: 20px; }
+.jb-carousel__nav--next { right: 20px; }
+
+.jb-carousel__dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.jb-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,.4);
+  cursor: pointer;
+  transition: all .22s cubic-bezier(.4, 0, .2, 1);
+  padding: 0;
+}
+.jb-carousel__dot:hover { background: rgba(255,255,255,.75); }
+.jb-carousel__dot.is-active {
+  background: var(--jb-accent);
+  width: 28px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--jb-accent) 50%, transparent);
+}
+
+@media (max-width: 768px) {
+  .jb-carousel__nav { width: 38px; height: 38px; }
+  .jb-carousel__nav svg { width: 16px; height: 16px; }
+  .jb-carousel__nav--prev { left: 12px; }
+  .jb-carousel__nav--next { right: 12px; }
+  .jb-carousel__dots { bottom: 14px; }
+}
+
+/* ============================================================
    Video
    ============================================================ */
 
@@ -615,15 +719,26 @@ p { margin: 0 0 1em; }
 .jb-product-card__link:hover { color: var(--jb-text); }
 .jb-product-card__media {
   position: relative;
-  background: linear-gradient(135deg, var(--jb-bg-soft) 0%, color-mix(in srgb, var(--jb-bg-soft) 50%, var(--jb-bg)) 100%);
-  aspect-ratio: 1 / 1;
+  background:
+    radial-gradient(ellipse at center top, color-mix(in srgb, var(--jb-accent) 8%, transparent) 0%, transparent 60%),
+    linear-gradient(135deg, #0a0a0a 0%, #141210 100%);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .jb-product-card__media img {
-  width: 100%; height: 100%; object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,.5));
 }
-.jb-product-card:hover .jb-product-card__media img { transform: scale(1.06); }
+.jb-product-card:hover .jb-product-card__media img { transform: scale(1.04); }
 .jb-product-card__placeholder {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;

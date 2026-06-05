@@ -12,6 +12,28 @@
     "hero": {
       "type": "jb-hero",
       "blocks": {
+        "s1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_IUL_jpg.jpg",
+            "link": "shopify://collections/paquetes",
+            "alt_text": "Domina el mercado IUL — Paquete Premium de Leads"
+          }
+        },
+        "s2": {
+          "type": "slide",
+          "settings": {
+            "link": "shopify://collections/paquetes",
+            "alt_text": "No tienes que hacerlo solo — Agenda ahora"
+          }
+        },
+        "s3": {
+          "type": "slide",
+          "settings": {
+            "link": "shopify://collections/paquetes",
+            "alt_text": "Crecimiento estratégico y medible"
+          }
+        },
         "b1": {
           "type": "bullet",
           "settings": {
@@ -27,11 +49,14 @@
         "b3": {
           "type": "bullet",
           "settings": {
-            "text": "Soporte  antes y después de la compra"
+            "text": "Soporte antes y después de la compra"
           }
         }
       },
       "block_order": [
+        "s1",
+        "s2",
+        "s3",
         "b1",
         "b2",
         "b3"
@@ -45,7 +70,7 @@
         "cta_primary_url": "shopify://collections/paquetes",
         "cta_secondary_text": "Hablar con un asesor",
         "cta_secondary_url": "",
-        "image": "shopify://shop_images/1_IUL_jpg.jpg"
+        "autoplay_ms": 5000
       }
     },
     "video": {

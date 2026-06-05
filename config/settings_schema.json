@@ -158,5 +158,33 @@
         "label": "Facebook URL"
       }
     ]
+  },
+  {
+    "name": "Scripts externos",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Scripts de terceros que se inyectan antes del cierre del </body>. Útil para chat widgets, analytics o pixels."
+      },
+      {
+        "type": "textarea",
+        "id": "chat_widget_script",
+        "label": "Chat widget (GHL / Tidio / Intercom)",
+        "info": "Pegá el script tag completo. Se carga después de toda la página."
+      },
+      {
+        "type": "textarea",
+        "id": "analytics_script",
+        "label": "Analytics / Pixel (opcional)",
+        "info": "Google Analytics, Meta Pixel, etc."
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_whatsapp_fab",
+        "label": "Ocultar botón flotante de WhatsApp",
+        "info": "Activá esto si usás un chat widget que tiene su propio botón.",
+        "default": false
+      }
+    ]
   }
 ]

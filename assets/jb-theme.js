@@ -82,6 +82,62 @@
     return null;
   }
 
+  /* ----- Hero carousel: autoplay + dots + prev/next ----- */
+  document.querySelectorAll('[data-jb-carousel]').forEach(function(carousel) {
+    var track = carousel.querySelector('.jb-carousel__track');
+    if (!track) return;
+    var slides = track.children;
+    if (slides.length === 0) return;
+
+    var dots = carousel.querySelectorAll('.jb-carousel__dot');
+    var prev = carousel.querySelector('.jb-carousel__nav--prev');
+    var next = carousel.querySelector('.jb-carousel__nav--next');
+    var autoplayMs = parseInt(carousel.dataset.autoplay, 10) || 0;
+
+    var current = 0;
+    var timer = null;
+    var paused = false;
+
+    function go(i) {
+      current = ((i % slides.length) + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      for (var d = 0; d < dots.length; d++) {
+        if (d === current) dots[d].classList.add('is-active');
+        else dots[d].classList.remove('is-active');
+      }
+    }
+
+    function start() {
+      stop();
+      if (autoplayMs && slides.length > 1 && !paused) {
+        timer = setInterval(function() { go(current + 1); }, autoplayMs);
+      }
+    }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    if (prev) prev.addEventListener('click', function() { go(current - 1); start(); });
+    if (next) next.addEventListener('click', function() { go(current + 1); start(); });
+    for (var i = 0; i < dots.length; i++) {
+      (function(idx) {
+        dots[idx].addEventListener('click', function() { go(idx); start(); });
+      })(i);
+    }
+
+    carousel.addEventListener('mouseenter', function() { paused = true; stop(); });
+    carousel.addEventListener('mouseleave', function() { paused = false; start(); });
+
+    // Pause when tab not visible
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    go(0);
+    start();
+  });
+
   /* ----- Variant select → update hidden input id ----- */
   document.querySelectorAll('[data-jb-variant-select]').forEach(function(select) {
     select.addEventListener('change', function() {
