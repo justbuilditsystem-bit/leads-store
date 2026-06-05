@@ -66,8 +66,8 @@
       "name": "Hero",
       "settings": {
         "eyebrow": "PARA AGENTES DE SEGUROS HISPANOS EN USA",
-        "headline": "Tu próximo cliente ya levantó la mano.",
-        "subtitle": "Recibe leads hispanos interesados en seguro de vida, IUL o final expense — listos en tu WhatsApp en menos de 72 horas. El cierre lo cierras tú, la generación la ponemos nosotros.",
+        "headline": "Tu próximo cliente ya levantó la mano",
+        "subtitle": "Recibe leads hispanos interesados en seguro de vida, IUL o final expense listos en tu WhatsApp en menos de 72 horas. Lo cierras tú, la generación la ponemos nosotros.",
         "cta_primary_text": "Ver paquetes",
         "cta_primary_url": "shopify://collections/paquetes",
         "cta_secondary_text": "Hablar antes de comprar",
@@ -80,8 +80,8 @@
       "name": "Video pre-venta",
       "settings": {
         "eyebrow": "ANTES DE COMPRAR",
-        "title": "Mira cómo funciona antes de comprar.",
-        "subtitle": "Te explicamos en 2 minutos cómo se generan los leads, cómo te llegan y qué hacemos cuando algo viene mal. Sin promesas mágicas.",
+        "title": "Mira cómo funciona antes de comprar",
+        "subtitle": "Te explicamos en 2 minutos cómo se generan los leads, cómo te llegan y qué hacemos cuando algo viene mal.",
         "video_url": ""
       }
     },
