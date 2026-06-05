@@ -39,19 +39,19 @@
         "b1": {
           "type": "bullet",
           "settings": {
-            "text": "Entrega en 24-72 horas vía WhatsApp o Facebook Form"
+            "text": "Entrega entre 24 y 72 horas por WhatsApp o Facebook Form"
           }
         },
         "b2": {
           "type": "bullet",
           "settings": {
-            "text": "Reposición de leads que vienen mal de origen"
+            "text": "Reposición sin discusión si el lead vino mal de origen"
           }
         },
         "b3": {
           "type": "bullet",
           "settings": {
-            "text": "Soporte  antes y después de la compra"
+            "text": "Soporte que contesta antes, durante y después"
           }
         }
       },
@@ -66,11 +66,11 @@
       "name": "Hero",
       "settings": {
         "eyebrow": "PARA AGENTES DE SEGUROS HISPANOS EN USA",
-        "headline": "Leads que ya quieren hablar contigo.",
-        "subtitle": "Deja de quemar horas en cold calls. Recibe prospectos hispanos que ya levantaron la mano por seguro de vida, IUL o final expense — listos en tu WhatsApp en menos de 72 horas.",
+        "headline": "Tu próximo cliente ya levantó la mano.",
+        "subtitle": "Recibe leads hispanos interesados en seguro de vida, IUL o final expense — listos en tu WhatsApp en menos de 72 horas. El cierre lo cierras tú, la generación la ponemos nosotros.",
         "cta_primary_text": "Ver paquetes",
         "cta_primary_url": "shopify://collections/paquetes",
-        "cta_secondary_text": "Hablar con un asesor",
+        "cta_secondary_text": "Hablar antes de comprar",
         "cta_secondary_url": "",
         "autoplay_ms": 5000
       }
@@ -80,8 +80,8 @@
       "name": "Video pre-venta",
       "settings": {
         "eyebrow": "ANTES DE COMPRAR",
-        "title": "Mira este video de 2 minutos.",
-        "subtitle": "Te explicamos qué vas a recibir, cómo se entregan los leads y por qué cerramos cuentas que otros no pueden.",
+        "title": "Mira cómo funciona antes de comprar.",
+        "subtitle": "Te explicamos en 2 minutos cómo se generan los leads, cómo te llegan y qué hacemos cuando algo viene mal. Sin promesas mágicas.",
         "video_url": ""
       }
     },
@@ -92,32 +92,32 @@
           "type": "card",
           "settings": {
             "icon": "chat",
-            "title": "Aclaramos dudas antes de comprar",
-            "text": "Hablamos por WhatsApp y te decimos qué paquete tiene sentido según tu zona y tu presupuesto. Sin venderte humo."
+            "title": "Hablamos antes de cobrarte",
+            "text": "Si nunca compraste leads o vienes quemado de otro proveedor, te pasamos al WhatsApp del equipo antes de pagar. Te decimos qué paquete te sirve. Si no te sirve nada, también te lo decimos."
           }
         },
         "c2": {
           "type": "card",
           "settings": {
             "icon": "bolt",
-            "title": "Entrega en 24-72 horas",
-            "text": "Después de la compra, los leads empiezan a llegar a tu WhatsApp o a la plataforma que uses en menos de 3 días hábiles."
+            "title": "Entrega entre 24 y 72 horas",
+            "text": "Confirmas el pago, te activamos el canal (WhatsApp o Facebook Form a tu CRM) en menos de 3 días hábiles. Los leads empiezan a llegar en tiempo real desde el día uno."
           }
         },
         "c3": {
           "type": "card",
           "settings": {
             "icon": "refresh",
-            "title": "Reposición de leads malos",
-            "text": "Si un lead viene mal de origen (número falso, persona equivocada) lo revisamos caso por caso y lo reponemos."
+            "title": "Reposición sin pelearte",
+            "text": "Si un lead viene mal de origen (número que no existe, persona equivocada, bot), nos avisas, lo revisamos y lo reponemos. No tienes que mandar capturas ni rogar por correo."
           }
         },
         "c4": {
           "type": "card",
           "settings": {
             "icon": "shield",
-            "title": "Soporte que contesta",
-            "text": "No te dejamos colgado después de cobrar. Si tienes una duda dos semanas después, te seguimos respondiendo."
+            "title": "Soporte real, no chatbot",
+            "text": "Una semana, un mes o seis meses después de la compra: si tienes una duda, te seguimos respondiendo desde el mismo número. No te dejamos colgado."
           }
         }
       },
@@ -129,18 +129,18 @@
       ],
       "name": "Reassurance",
       "settings": {
-        "eyebrow": "ASÍ TRABAJAMOS",
-        "title": "No estás solo en este proceso.",
-        "subtitle": "Si nunca compraste leads o ya te quemaste con otro proveedor, te acompañamos antes y después de la compra para que el dinero rinda."
+        "eyebrow": "POR QUÉ TRABAJAR CON NOSOTROS",
+        "title": "No vendemos leads y desaparecemos.",
+        "subtitle": "Si ya te quemaste antes, sabes el patrón: te cobran, te mandan basura, no te contestan más. Acá te respondemos antes, durante y después — y si algo sale mal, te lo reponemos."
       }
     },
     "products": {
       "type": "jb-product-grid",
       "name": "Grid de productos",
       "settings": {
-        "eyebrow": "PAQUETES",
-        "title": "Compra leads",
-        "subtitle": "Elige la cantidad que necesitas. Todos los paquetes vienen con entrega vía WhatsApp o Facebook Form y reposición de leads que vienen mal de origen.",
+        "eyebrow": "PAQUETES DE LEADS",
+        "title": "Tres paquetes. Mismo soporte. Cero letra chica.",
+        "subtitle": "Elige el volumen que necesitas. Cada paquete incluye entrega por WhatsApp o Facebook Form, reposición de leads malos y soporte directo.",
         "collection": "frontpage",
         "products_to_show": 3
       }
@@ -151,25 +151,25 @@
         "v1": {
           "type": "bullet",
           "settings": {
-            "text": "Perfil con tu foto profesional y número de licencia visible"
+            "text": "Perfil con foto profesional y número de licencia visible"
           }
         },
         "v2": {
           "type": "bullet",
           "settings": {
-            "text": "Link directo a WhatsApp para que el lead te escriba en un click"
+            "text": "Link a WhatsApp en 1 click desde el perfil"
           }
         },
         "v3": {
           "type": "bullet",
           "settings": {
-            "text": "Reseñas y casos de éxito que el prospecto puede ver antes de hablarte"
+            "text": "Reseñas y casos para que el prospecto te ubique antes de hablarte"
           }
         },
         "v4": {
           "type": "bullet",
           "settings": {
-            "text": "Mejora tasa de respuesta promedio del 25% al 40-50%"
+            "text": "Diferencia visible entre tú y un agente sin presencia digital"
           }
         }
       },
@@ -181,11 +181,11 @@
       ],
       "name": "Página verificada",
       "settings": {
-        "eyebrow": "UPSELL",
-        "title": "Página verificada con tu licencia y foto.",
-        "subtitle": "Un perfil profesional con tu nombre, foto y número de licencia para que cada prospecto que reciba el lead vea que estás del otro lado y no es un call center anónimo. Sube la tasa de respuesta y baja las objeciones de confianza.",
+        "eyebrow": "UPGRADE OPCIONAL",
+        "title": "El prospecto necesita saber que eres real.",
+        "subtitle": "Un perfil con tu foto, nombre y número de licencia. Cuando el lead recibe tu primer mensaje, abre tu perfil y ve que existes y estás autorizado. Baja una de las objeciones más comunes del primer contacto.",
         "image": "shopify://shop_images/4.png",
-        "cta_text": "Quiero mi página verificada",
+        "cta_text": "Activar página verificada",
         "cta_url": "shopify://collections/pagina-verificada",
         "price_label": "Suscripción mensual · cancelas cuando quieras"
       }
@@ -279,26 +279,26 @@
       "name": "FAQ",
       "settings": {
         "eyebrow": "PREGUNTAS FRECUENTES",
-        "title": "Lo que más nos preguntan.",
-        "subtitle": "Si tu duda no está acá, mandanos un WhatsApp y te respondemos en menos de una hora hábil."
+        "title": "Lo que la gente pregunta antes de comprar.",
+        "subtitle": "Si tu duda no está acá, escríbenos por WhatsApp y te contestamos en menos de una hora hábil."
       }
     },
     "contact": {
       "type": "jb-contact",
       "name": "Contacto",
       "settings": {
-        "eyebrow": "HABLEMOS",
-        "title": "Antes de comprar, habla con un asesor.",
-        "subtitle": "Si es tu primera vez comprando leads o no sabes qué paquete elegir, te orientamos. Sin pitch de venta."
+        "eyebrow": "HABLEMOS PRIMERO",
+        "title": "Antes de pagar, hablamos.",
+        "subtitle": "Si nunca compraste leads, vienes quemado de otro proveedor o no estás seguro qué paquete te sirve — te orientamos. No vendemos por insistir."
       }
     },
     "footer-signup": {
       "type": "jb-footer-signup",
       "name": "Newsletter footer",
       "settings": {
-        "title": "Ofertas exclusivas antes que todos.",
-        "subtitle": "Suscríbete y avisamos primero cuando abrimos cupos de nichos nuevos o bajamos precios de paquetes grandes.",
-        "cta_text": "Suscribirme"
+        "title": "Cupos nuevos y ofertas, primero a suscriptores.",
+        "subtitle": "Cuando abrimos un nicho nuevo (Mortgage Protection, Annuities) o bajamos precios en paquetes grandes, los suscriptores se enteran antes que nadie. Cero spam.",
+        "cta_text": "Avisarme"
       }
     }
   },
