@@ -12,6 +12,21 @@
     "hero": {
       "type": "jb-hero",
       "blocks": {
+        "slide_zmaCry": {
+          "type": "slide",
+          "settings": {
+            "link": "",
+            "alt_text": ""
+          }
+        },
+        "slide_WJqMDQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_IUL_jpg.jpg",
+            "link": "",
+            "alt_text": ""
+          }
+        },
         "slide_N3hccX": {
           "type": "slide",
           "settings": {
@@ -40,6 +55,8 @@
         }
       },
       "block_order": [
+        "slide_zmaCry",
+        "slide_WJqMDQ",
         "slide_N3hccX",
         "b1",
         "b2",
