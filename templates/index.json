@@ -108,8 +108,8 @@
           "type": "card",
           "settings": {
             "icon": "refresh",
-            "title": "Reposición sin pelearte",
-            "text": "Si un lead viene mal de origen (número que no existe, persona equivocada, bot), nos avisas, lo revisamos y lo reponemos. No tienes que mandar capturas ni rogar por correo."
+            "title": "Reposición de hasta 5 leads",
+            "text": "Si un lead viene mal de origen (número que no existe, estado erroneo), nos avisas, lo revisamos y lo reponemos. No tienes que mandar capturas ni rogar por correo."
           }
         },
         "c4": {
