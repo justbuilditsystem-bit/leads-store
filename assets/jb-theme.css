@@ -816,15 +816,16 @@ p { margin: 0 0 1em; }
 }
 .jb-verified__media {
   width: 100%;
-  max-width: 900px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 .jb-verified__media img {
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 16px;
   box-shadow:
     0 6px 16px rgba(0,0,0,.3),
-    0 28px 64px -20px rgba(0,0,0,.5);
+    0 24px 56px -20px rgba(0,0,0,.5);
   border: 1px solid color-mix(in srgb, var(--jb-accent) 14%, transparent);
 }
 .jb-verified__placeholder {
