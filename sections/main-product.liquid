@@ -106,12 +106,26 @@
         ℹ️ Debes seleccionar <strong>mínimo 3 estados</strong> para continuar.
       </div>
 
-      <input type="hidden" id="LeadStates" name="properties[Estados seleccionados]" value="">
+<input type="hidden" id="LeadStates" name="properties[Estados seleccionados]" value="">
 
-      <div class="jb-states-actions">
-        <button type="button" class="jb-mini-btn" data-select-all-states>Seleccionar todos</button>
-        <button type="button" class="jb-mini-btn" data-clear-all-states>Borrar todos</button>
-      </div>
+<div class="jb-state-search-wrap">
+  <label for="StateSearch">Buscar estado</label>
+  <input
+    type="search"
+    id="StateSearch"
+    class="jb-state-search"
+    placeholder="Ej: Florida, Texas, California..."
+    autocomplete="off"
+    data-state-search
+  >
+</div>
+
+<div class="jb-states-actions">
+  <button type="button" class="jb-mini-btn" data-select-all-states>Seleccionar visibles</button>
+  <button type="button" class="jb-mini-btn" data-clear-all-states>Borrar visibles</button>
+</div>
+
+<p class="jb-states-counter" data-states-count>0 estados seleccionados</p>
 
       <div class="jb-states-grid" data-states-list>
         {%- assign states = "Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming" | split: "," -%}
