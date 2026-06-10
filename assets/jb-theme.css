@@ -1374,7 +1374,9 @@ p { margin: 0 0 1em; }
 /* ================================
    Product Intake Form
 ================================ */
-
+.jb-state-option[hidden] {
+  display: none !important;
+}
 .jb-product-intake {
   margin: 28px 0;
   padding: 24px;
