@@ -123,180 +123,6 @@
 <div class="jb-states-actions">
   <button type="button" class="jb-mini-btn" data-select-all-states>Seleccionar visibles</button>
   <button type="button" class="jb-mini-btn" data-clear-all-states>Borrar visibles</button>
-  <script>
-  (function () {
-    function initProductIntake(scope) {
-      var productForm = scope.querySelector('#product-form');
-
-      if (!productForm || productForm.dataset.intakeReady === 'true') {
-        return;
-      }
-
-      productForm.dataset.intakeReady = 'true';
-
-      var intakeRoot = productForm.querySelector('[data-product-intake]') || productForm;
-      var phoneInput = intakeRoot.querySelector('#BuyerPhone');
-      var statesHiddenInput = intakeRoot.querySelector('#LeadStates');
-      var stateCheckboxes = Array.from(intakeRoot.querySelectorAll('[data-state-checkbox]'));
-      var statesError = intakeRoot.querySelector('[data-states-error]');
-      var selectAllButton = intakeRoot.querySelector('[data-select-all-states]');
-      var clearAllButton = intakeRoot.querySelector('[data-clear-all-states]');
-      var stateSearchInput = intakeRoot.querySelector('[data-state-search]');
-      var statesCounter = intakeRoot.querySelector('[data-states-count]');
-
-      function normalizeText(value) {
-        return String(value || '')
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .trim();
-      }
-
-      function getStateOptions() {
-        return Array.from(intakeRoot.querySelectorAll('.jb-state-option'));
-      }
-
-      function getVisibleStateOptions() {
-        return getStateOptions().filter(function (option) {
-          return option.style.display !== 'none';
-        });
-      }
-
-      function getSelectedStates() {
-        return stateCheckboxes
-          .filter(function (checkbox) {
-            return checkbox.checked;
-          })
-          .map(function (checkbox) {
-            return checkbox.value;
-          });
-      }
-
-      function updateStatesInput() {
-        if (!statesHiddenInput) return;
-
-        var selectedStates = getSelectedStates();
-        statesHiddenInput.value = selectedStates.join(', ');
-
-        if (statesCounter) {
-          statesCounter.textContent = selectedStates.length + ' estados seleccionados';
-        }
-
-        if (statesError && selectedStates.length >= 3) {
-          statesError.hidden = true;
-        }
-      }
-
-      function filterStates() {
-        if (!stateSearchInput) return;
-
-        var searchValue = normalizeText(stateSearchInput.value);
-        var options = getStateOptions();
-
-        options.forEach(function (option) {
-          var stateName = normalizeText(option.textContent);
-          var shouldShow = stateName.includes(searchValue);
-
-          option.style.display = shouldShow ? 'flex' : 'none';
-        });
-      }
-
-      if (phoneInput) {
-        phoneInput.addEventListener('input', function () {
-          phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
-        });
-      }
-
-      if (stateSearchInput) {
-        stateSearchInput.addEventListener('input', function () {
-          filterStates();
-        });
-      }
-
-      stateCheckboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-          updateStatesInput();
-        });
-      });
-
-      if (selectAllButton) {
-        selectAllButton.addEventListener('click', function (event) {
-          event.preventDefault();
-
-          var visibleOptions = getVisibleStateOptions();
-
-          visibleOptions.forEach(function (option) {
-            var checkbox = option.querySelector('[data-state-checkbox]');
-
-            if (checkbox) {
-              checkbox.checked = true;
-            }
-          });
-
-          updateStatesInput();
-        });
-      }
-
-      if (clearAllButton) {
-        clearAllButton.addEventListener('click', function (event) {
-          event.preventDefault();
-
-          var visibleOptions = getVisibleStateOptions();
-
-          visibleOptions.forEach(function (option) {
-            var checkbox = option.querySelector('[data-state-checkbox]');
-
-            if (checkbox) {
-              checkbox.checked = false;
-            }
-          });
-
-          updateStatesInput();
-        });
-      }
-
-      productForm.addEventListener('submit', function (event) {
-        if (statesHiddenInput) {
-          updateStatesInput();
-
-          if (getSelectedStates().length < 3) {
-            event.preventDefault();
-
-            if (statesError) {
-              statesError.hidden = false;
-            }
-
-            if (stateSearchInput) {
-              stateSearchInput.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-              });
-            }
-
-            return;
-          }
-        }
-
-        if (phoneInput && !/^[0-9]{7,15}$/.test(phoneInput.value)) {
-          event.preventDefault();
-          phoneInput.focus();
-          alert('El teléfono debe tener solo números y entre 7 y 15 dígitos.');
-        }
-      });
-
-      filterStates();
-      updateStatesInput();
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      initProductIntake(document);
-    });
-
-    document.addEventListener('shopify:section:load', function (event) {
-      initProductIntake(event.target);
-    });
-  })();
-</script>
 </div>
 
 <p class="jb-states-counter" data-states-count>0 estados seleccionados</p>
@@ -393,6 +219,167 @@
     </div>
   </div>
 </section>
+<script>
+  (function () {
+    function initProductIntake() {
+      var intakeRoot = document.querySelector('[data-product-intake]');
+      if (!intakeRoot) return;
+
+      var productForm = intakeRoot.closest('form');
+      if (!productForm) return;
+
+      if (intakeRoot.dataset.intakeReady === 'true') return;
+      intakeRoot.dataset.intakeReady = 'true';
+
+      var phoneInput = intakeRoot.querySelector('#BuyerPhone');
+      var statesHiddenInput = intakeRoot.querySelector('#LeadStates');
+      var stateSearchInput = intakeRoot.querySelector('[data-state-search]');
+      var stateOptions = Array.from(intakeRoot.querySelectorAll('.jb-state-option'));
+      var stateCheckboxes = Array.from(intakeRoot.querySelectorAll('[data-state-checkbox]'));
+      var statesError = intakeRoot.querySelector('[data-states-error]');
+      var selectAllButton = intakeRoot.querySelector('[data-select-all-states]');
+      var clearAllButton = intakeRoot.querySelector('[data-clear-all-states]');
+      var statesCounter = intakeRoot.querySelector('[data-states-count]');
+
+      function normalizeText(value) {
+        return String(value || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .trim();
+      }
+
+      function getSelectedStates() {
+        return stateCheckboxes
+          .filter(function (checkbox) {
+            return checkbox.checked;
+          })
+          .map(function (checkbox) {
+            return checkbox.value;
+          });
+      }
+
+      function updateStatesInput() {
+        var selectedStates = getSelectedStates();
+
+        if (statesHiddenInput) {
+          statesHiddenInput.value = selectedStates.join(', ');
+        }
+
+        if (statesCounter) {
+          statesCounter.textContent = selectedStates.length + ' estados seleccionados';
+        }
+
+        if (statesError && selectedStates.length >= 3) {
+          statesError.hidden = true;
+        }
+      }
+
+      function filterStates() {
+        if (!stateSearchInput) return;
+
+        var searchValue = normalizeText(stateSearchInput.value);
+
+        stateOptions.forEach(function (option) {
+          var checkbox = option.querySelector('[data-state-checkbox]');
+          var stateValue = checkbox ? checkbox.value : option.textContent;
+          var normalizedState = normalizeText(stateValue);
+
+          var shouldShow = searchValue === '' || normalizedState.includes(searchValue);
+
+          option.style.display = shouldShow ? 'flex' : 'none';
+        });
+      }
+
+      function getVisibleOptions() {
+        return stateOptions.filter(function (option) {
+          return option.style.display !== 'none';
+        });
+      }
+
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function () {
+          phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+        });
+      }
+
+      if (stateSearchInput) {
+        stateSearchInput.addEventListener('input', filterStates);
+        stateSearchInput.addEventListener('keyup', filterStates);
+        stateSearchInput.addEventListener('search', filterStates);
+      }
+
+      stateCheckboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', updateStatesInput);
+      });
+
+      if (selectAllButton) {
+        selectAllButton.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          getVisibleOptions().forEach(function (option) {
+            var checkbox = option.querySelector('[data-state-checkbox]');
+            if (checkbox) checkbox.checked = true;
+          });
+
+          updateStatesInput();
+        });
+      }
+
+      if (clearAllButton) {
+        clearAllButton.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          getVisibleOptions().forEach(function (option) {
+            var checkbox = option.querySelector('[data-state-checkbox]');
+            if (checkbox) checkbox.checked = false;
+          });
+
+          updateStatesInput();
+        });
+      }
+
+      productForm.addEventListener('submit', function (event) {
+        updateStatesInput();
+
+        if (statesHiddenInput && getSelectedStates().length < 3) {
+          event.preventDefault();
+
+          if (statesError) {
+            statesError.hidden = false;
+          }
+
+          if (stateSearchInput) {
+            stateSearchInput.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }
+
+          return;
+        }
+
+        if (phoneInput && !/^[0-9]{7,15}$/.test(phoneInput.value)) {
+          event.preventDefault();
+          phoneInput.focus();
+          alert('El teléfono debe tener solo números y entre 7 y 15 dígitos.');
+        }
+      });
+
+      filterStates();
+      updateStatesInput();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initProductIntake);
+    } else {
+      initProductIntake();
+    }
+
+    document.addEventListener('shopify:section:load', initProductIntake);
+  })();
+</script>
+
 
 {% schema %}
 {
