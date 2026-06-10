@@ -276,20 +276,20 @@
       }
 
       function filterStates() {
-        if (!stateSearchInput) return;
+  if (!stateSearchInput) return;
 
-        var searchValue = normalizeText(stateSearchInput.value);
+  var searchValue = normalizeText(stateSearchInput.value);
 
-        stateOptions.forEach(function (option) {
-          var checkbox = option.querySelector('[data-state-checkbox]');
-          var stateValue = checkbox ? checkbox.value : option.textContent;
-          var normalizedState = normalizeText(stateValue);
+  stateOptions.forEach(function (option) {
+    var checkbox = option.querySelector('[data-state-checkbox]');
+    var stateValue = checkbox ? checkbox.value : option.textContent;
+    var normalizedState = normalizeText(stateValue);
 
-          var shouldShow = searchValue === '' || normalizedState.includes(searchValue);
+    var shouldShow = searchValue === '' || normalizedState.includes(searchValue);
 
-          option.style.display = shouldShow ? 'flex' : 'none';
-        });
-      }
+    option.hidden = !shouldShow;
+  });
+}
 
       function getVisibleOptions() {
         return stateOptions.filter(function (option) {
