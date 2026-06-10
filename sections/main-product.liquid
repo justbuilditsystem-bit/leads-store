@@ -55,6 +55,100 @@
         {%- endunless -%}
 
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-jb-variant-id>
+        {%- assign product_title_downcase = product.title | downcase -%}
+{%- assign is_leads_product = false -%}
+{%- if product_title_downcase contains 'lead' -%}
+  {%- assign is_leads_product = true -%}
+{%- endif -%}
+
+<div class="jb-product-intake" data-product-intake>
+  <h3 class="jb-product-intake__title">Completa tus datos antes de continuar</h3>
+
+  <div class="jb-product-intake__notice">
+    ⚠️ Las órdenes pueden iniciar en un plazo de hasta <strong>72 horas hábiles</strong> después de realizada la compra.
+  </div>
+
+  <input type="hidden" name="properties[Producto solicitado]" value="{{ product.title | escape }}">
+
+  <div class="jb-product-intake__grid">
+    <div class="jb-field">
+      <label for="BuyerName">Nombre completo</label>
+      <input type="text" id="BuyerName" name="properties[Nombre completo]" required>
+    </div>
+
+    <div class="jb-field">
+      <label for="BuyerEmail">Correo electrónico</label>
+      <input type="email" id="BuyerEmail" name="properties[Correo electrónico]" autocomplete="email" required>
+    </div>
+
+    <div class="jb-field jb-product-intake__full">
+      <label for="BuyerPhone">Teléfono / WhatsApp</label>
+      <input type="tel" id="BuyerPhone" name="properties[Teléfono / WhatsApp]" autocomplete="tel" required>
+    </div>
+  </div>
+
+  {%- if is_leads_product -%}
+    <div class="jb-field jb-product-intake__full">
+      <label>Selecciona los estados</label>
+
+      <div class="jb-product-intake__info">
+        ℹ️ Debes seleccionar <strong>mínimo 3 estados</strong> para continuar.
+      </div>
+
+      <input type="hidden" id="LeadStates" name="properties[Estados seleccionados]" value="">
+
+      <div class="jb-states-actions">
+        <button type="button" class="jb-mini-btn" data-select-all-states>Seleccionar todos</button>
+        <button type="button" class="jb-mini-btn" data-clear-all-states>Borrar todos</button>
+      </div>
+
+      <div class="jb-states-grid" data-states-list>
+        {%- assign states = "Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming" | split: "," -%}
+        {%- for state in states -%}
+          <label class="jb-state-option">
+            <input type="checkbox" value="{{ state | strip }}" data-state-checkbox>
+            <span>{{ state | strip }}</span>
+          </label>
+        {%- endfor -%}
+      </div>
+
+      <p class="jb-product-intake__error" data-states-error hidden>
+        Debes seleccionar mínimo 3 estados para continuar.
+      </p>
+    </div>
+  {%- endif -%}
+
+  <div class="jb-product-intake__row">
+    <div class="jb-field">
+      <label>¿Ya compraste leads con nosotros?</label>
+      <div class="jb-radio-group">
+        <label><input type="radio" name="properties[¿Ya compraste leads con nosotros?]" value="Sí" required> Sí</label>
+        <label><input type="radio" name="properties[¿Ya compraste leads con nosotros?]" value="No" required> No</label>
+      </div>
+    </div>
+
+    <div class="jb-field">
+      <label>¿Cuándo te gustaría comenzar?</label>
+      <div class="jb-radio-group">
+        <label><input type="radio" name="properties[Inicio deseado]" value="Inmediatamente" required> Inmediatamente</label>
+        <label><input type="radio" name="properties[Inicio deseado]" value="Luego" required> Luego</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="jb-field">
+    <label>¿Cuentas con un CRM externo de GHL?</label>
+    <div class="jb-radio-group">
+      <label><input type="radio" name="properties[¿Cuenta con CRM externo de GHL?]" value="Sí" required> Sí</label>
+      <label><input type="radio" name="properties[¿Cuenta con CRM externo de GHL?]" value="No" required> No</label>
+    </div>
+  </div>
+
+  <div class="jb-field">
+    <label for="BuyerNotes">Notas adicionales</label>
+    <textarea id="BuyerNotes" name="properties[Notas adicionales]" rows="3" placeholder="Ej: horario de contacto, detalles del negocio, preferencias, etc."></textarea>
+  </div>
+</div>
 
         <div class="jb-field">
           <label for="Quantity">Cantidad</label>
