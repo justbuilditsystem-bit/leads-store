@@ -1370,3 +1370,173 @@ p { margin: 0 0 1em; }
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ================================
+   Product Intake Form
+================================ */
+
+.jb-product-intake {
+  margin: 28px 0;
+  padding: 24px;
+  border: 1px solid rgba(201, 171, 105, 0.28);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.jb-product-intake__title {
+  margin: 0 0 14px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.jb-product-intake__notice,
+.jb-product-intake__info {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(201, 171, 105, 0.12);
+  border: 1px solid rgba(201, 171, 105, 0.35);
+  color: inherit;
+}
+
+.jb-product-intake__grid,
+.jb-product-intake__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.jb-product-intake__full {
+  grid-column: 1 / -1;
+}
+
+.jb-product-intake .jb-field {
+  margin-bottom: 16px;
+}
+
+.jb-product-intake .jb-field > label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.jb-product-intake input[type="text"],
+.jb-product-intake input[type="email"],
+.jb-product-intake input[type="tel"],
+.jb-product-intake textarea {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Corrección fuerte para que checkbox y radio no se rompan */
+.jb-product-intake input[type="checkbox"],
+.jb-product-intake input[type="radio"] {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 0 0 18px !important;
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  accent-color: #c9ab69;
+  cursor: pointer;
+}
+
+.jb-states-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.jb-mini-btn {
+  padding: 8px 12px;
+  border: 1px solid rgba(201, 171, 105, 0.45);
+  border-radius: 8px;
+  background: rgba(201, 171, 105, 0.12);
+  color: inherit;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.jb-states-grid {
+  width: 100%;
+  max-height: 280px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.jb-state-option {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.jb-state-option span {
+  display: inline-block !important;
+  margin: 0 !important;
+  font-weight: 500;
+}
+
+.jb-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.jb-radio-group label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.jb-product-intake__error {
+  color: #ff8b8b;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 989px) {
+  .jb-states-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 749px) {
+  .jb-product-intake {
+    padding: 18px;
+  }
+
+  .jb-product-intake__grid,
+  .jb-product-intake__row,
+  .jb-states-grid {
+    grid-template-columns: 1fr;
+  }
+}
