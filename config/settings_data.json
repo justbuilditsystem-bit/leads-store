@@ -26,7 +26,7 @@
     "page_width": 1200,
     "whatsapp_url": "https://wa.link/t4ie68",
     "contact_email": "info@justbuilditnow.com",
-    "chat_widget_script": "<script src=\"https://beta.leadconnectorhq.com/loader.js\" data-resources-url=\"https://beta.leadconnectorhq.com/chat-widget/loader.js\" data-widget-id=\"6a1c813b7645b2ba9a2fccee\"></script>",
+    "chat_widget_script": "",
     "hide_whatsapp_fab": true,
     "content_for_index": [],
     "blocks": {
