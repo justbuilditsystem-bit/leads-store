@@ -106,6 +106,17 @@
     </select>
   </div>
 {%- endif -%}
+
+{%- if is_leads_product -%}
+  <div class="jb-field jb-product-intake__full">
+    <label for="LeadAcquisitionChannel">Canal de adquisición del lead</label>
+    <select id="LeadAcquisitionChannel" name="properties[Canal de adquisición del lead]" required>
+      <option value="" disabled selected>Selecciona el canal</option>
+      <option value="Facebook Form">Facebook Form</option>
+      <option value="WhatsApp">WhatsApp</option>
+    </select>
+  </div>
+{%- endif -%}
   </div>
 
   {%- if is_leads_product -%}
