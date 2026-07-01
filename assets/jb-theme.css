@@ -1541,4 +1541,24 @@ p { margin: 0 0 1em; }
   .jb-states-grid {
     grid-template-columns: 1fr;
   }
+  .jb-product-intake select {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(201, 171, 105, 0.35);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--jb-text);
+  font: inherit;
+}
+
+.jb-product-intake select:focus {
+  outline: none;
+  border-color: rgba(201, 171, 105, 0.85);
+  box-shadow: 0 0 0 2px rgba(201, 171, 105, 0.18);
+}
+
+.jb-product-intake select option {
+  background: #111;
+  color: #fff;
+}
 }
