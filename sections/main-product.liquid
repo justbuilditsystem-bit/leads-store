@@ -96,6 +96,16 @@
   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
 >
     </div>
+    {%- if is_leads_product -%}
+  <div class="jb-field jb-product-intake__full">
+    <label for="LeadType">Tipo de lead</label>
+    <select id="LeadType" name="properties[Tipo de lead]" required>
+      <option value="" disabled selected>Selecciona el tipo de lead</option>
+      <option value="Beneficios en vida">Beneficios en vida</option>
+      <option value="IUL">IUL</option>
+    </select>
+  </div>
+{%- endif -%}
   </div>
 
   {%- if is_leads_product -%}
